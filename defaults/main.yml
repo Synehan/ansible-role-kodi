@@ -1,0 +1,45 @@
+---
+# defaults file for synehan.kodi
+kodi_sysuser: htpc
+kodi_sysgroup: htpc
+
+kodi_webserver_enable: False
+
+kodi_webserver_username: kodi
+kodi_webserver_password: kodi
+kodi_webserver_port: 8080
+
+kodi_zeroconf_enable: false
+kodi_upnpserver_enable: true
+
+kodi_videolibrary_updateonstartup: true
+kodi_musiclibrary_updateonstartup: true
+
+kodi_audiooutput_passthroughdevice: ALSA:iec958:CARD=MID,DEV=0
+
+kodi_addons_unknownsource_enable: false
+
+kodi_smb_winserver: ""
+kodi_smb_workgroup: "WORKGROUP"
+
+kodi_usemysql: false
+
+kodi_mysql:
+  host: localhost
+  port: 3306
+  user: kodi
+  pass: changeme
+
+kodi_sources:
+  - name: movies
+    path: smb://127.0.0.1/Movies/
+    allowsharing: false
+    type: video
+  - name: TV Shows
+    path: /media
+    allowsharing: true
+    type: video
+  - name: Music
+    path: smb://127.0.0.1/Music/
+    allowsharing: true
+    type: music

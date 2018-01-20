@@ -1,0 +1,20 @@
+<advancedsettings>
+  <videodatabase>
+    <type>mysql</type>
+    <host>{{ kodi_mysql['host'] }}</host>
+    <port>{{ kodi_mysql['port'] }}</port>
+    <user>{{ kodi_mysql['user'] }}</user>
+    <pass>{{ kodi_mysql['pass'] }}</pass>
+  </videodatabase>
+  <musicdatabase>
+    <type>mysql</type>
+    <host>{{ kodi_mysql['host'] }}</host>
+    <port>{{ kodi_mysql['port'] }}</port>
+    <user>{{ kodi_mysql['user'] }}</user>
+    <pass>{{ kodi_mysql['pass'] }}</pass>
+  </musicdatabase>
+  <videolibrary>
+    <importwatchedstate>true</importwatchedstate>
+    <importresumepoint>true</importresumepoint>
+  </videolibrary>
+</advancedsettings>

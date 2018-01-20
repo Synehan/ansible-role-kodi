@@ -1,0 +1,52 @@
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+{% for source in kodi_sources %}{% if source['type'] == "programs" %}
+        <source>
+            <name>{{ source['name'] }}</name>
+            <path pathversion="1">{{ source['path'] }}</path>
+            <allowsharing>{{ source['allowsharing'] }}</allowsharing>
+        </source>
+{% endif %}{% endfor %}
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+{% for source in kodi_sources %}{% if source['type'] == "video" %}
+        <source>
+            <name>{{ source['name'] }}</name>
+            <path pathversion="1">{{ source['path'] }}</path>
+            <allowsharing>{{ source['allowsharing'] }}</allowsharing>
+        </source>
+{% endif %}{% endfor %}
+    </video>
+    <music>
+        <default pathversion="1"></default>
+{% for source in kodi_sources %}{% if source['type'] == "music" %}
+        <source>
+            <name>{{ source['name'] }}</name>
+            <path pathversion="1">{{ source['path'] }}</path>
+            <allowsharing>{{ source['allowsharing'] }}</allowsharing>
+        </source>
+{% endif %}{% endfor %}
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+{% for source in kodi_sources %}{% if source['type'] == "pictures" %}
+        <source>
+            <name>{{ source['name'] }}</name>
+            <path pathversion="1">{{ source['path'] }}</path>
+            <allowsharing>{{ source['allowsharing'] }}</allowsharing>
+        </source>
+{% endif %}{% endfor %}
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+{% for source in kodi_sources %}{% if source['type'] == "files" %}
+        <source>
+            <name>{{ source['name'] }}</name>
+            <path pathversion="1">{{ source['path'] }}</path>
+            <allowsharing>{{ source['allowsharing'] }}</allowsharing>
+        </source>
+{% endif %}{% endfor %}
+    </files>
+</sources>

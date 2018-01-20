@@ -1,0 +1,24 @@
+---
+- name: Install Software Properties Common
+  apt:
+    pkg: software-properties-common
+    update_cache: true
+  register:  softpropinstalled
+  become: yes
+
+- name: Add Kodi Repository
+  apt_repository:
+    repo: 'ppa:team-xbmc/ppa'
+    state: present
+  when: softpropinstalled
+  register: ppakodi
+  become: yes
+
+- name: Install kodi
+  apt:
+    pkg: kodi
+    state: installed
+    update_cache: true
+  when: ppakodi
+  register: kodiinstalled
+  become: yes
