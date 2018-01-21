@@ -1,8 +1,10 @@
 ---
 # defaults file for synehan.kodi
+# System user
 kodi_sysuser: htpc
 kodi_sysgroup: htpc
 
+# Gui Settings
 kodi_webserver_enable: False
 
 kodi_webserver_username: kodi
@@ -22,6 +24,7 @@ kodi_addons_unknownsource_enable: false
 kodi_smb_winserver: ""
 kodi_smb_workgroup: "WORKGROUP"
 
+# Mysql Settings
 kodi_usemysql: false
 
 kodi_mysql:
@@ -30,16 +33,9 @@ kodi_mysql:
   user: kodi
   pass: changeme
 
-kodi_sources:
-  - name: movies
-    path: smb://127.0.0.1/Movies/
-    allowsharing: false
-    type: video
-  - name: TV Shows
-    path: /media
-    allowsharing: true
-    type: video
-  - name: Music
-    path: smb://127.0.0.1/Music/
-    allowsharing: true
-    type: music
+# Source settings
+kodi_sources_video: []
+kodi_sources_music: []
+kodi_sources_programs: []
+kodi_sources_files: []
+kodi_sources_pictures: []
