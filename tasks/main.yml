@@ -1,4 +1,6 @@
 ---
 # tasks file for synehan.kodi
+- include_tasks: cleanup.yml
+  when: kodi_cleanup_old_install | bool
 - include_tasks: install.yml
 - include_tasks: configure.yml

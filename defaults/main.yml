@@ -4,6 +4,11 @@
 kodi_sysuser: htpc
 kodi_sysgroup: htpc
 
+# Package type (stable, unstable or nightly)
+kodi_ppa_use: stable
+
+kodi_cleanup_old_install: false
+
 # Gui Settings
 kodi_webserver_enable: False
 

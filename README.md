@@ -5,6 +5,7 @@ on Ubuntu for the moment.
 
 The role will do the following tasks:
 
+- Cleanup old installation (if needed)
 - Install Software Properties Common
 - Add Kodi PPA
 - Install Kodi
@@ -28,6 +29,20 @@ The role will drop all the configurations in the directory /home/{{ kodi_sysuser
 ```yaml
 kodi_sysuser: htpc
 kodi_sysgroup: htpc
+```
+
+### Package types
+
+The role can use different PPA for the kodi installation (stable, unstable, nightly)
+
+```yaml
+kodi_ppa_use: stable
+```
+
+If needed, you can cleanup an old installation of kodi
+
+```yaml
+kodi_cleanup_old_install: false
 ```
 
 ### GUI Settings
