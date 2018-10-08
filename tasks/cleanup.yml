@@ -1,0 +1,30 @@
+---
+- name: Remove Older version of Kodi
+  apt:
+      autoremove: yes
+      name: kodi
+      autoclean: no
+      purge: yes
+      state: absent
+  become: true
+
+- name: Remove Nightly PPA
+  apt_repository:
+    repo: "ppa:team-xbmc/xbmc-nightly"
+    state: absent
+  when: kodi_ppa_use != "nightly"
+  become: true
+
+- name: Remove Unstable PPA
+  apt_repository:
+    repo: "ppa:team-xbmc/unstable"
+    state: absent
+  when: kodi_ppa_use != "unstable"
+  become: true
+
+- name: Remove Stable PPA
+  apt_repository:
+    repo: "ppa:team-xbmc/ppa"
+    state: absent
+  when: kodi_ppa_use != "stable"
+  become: true

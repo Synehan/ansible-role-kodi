@@ -6,9 +6,21 @@
   register:  softpropinstalled
   become: yes
 
+- set_fact:
+    _ppa_value_: 'ppa'
+  when: kodi_ppa_use == 'stable'
+
+- set_fact:
+    _ppa_value_: 'unstable'
+  when: kodi_ppa_use == 'unstable'
+
+- set_fact:
+    _ppa_value_: 'xbmc-nightly'
+  when: kodi_ppa_use == 'nightly'
+
 - name: Add Kodi Repository
   apt_repository:
-    repo: 'ppa:team-xbmc/ppa'
+    repo: "ppa:team-xbmc/{{ _ppa_value_ }}"
     state: present
   when: softpropinstalled
   register: ppakodi
@@ -17,7 +29,7 @@
 - name: Install kodi
   apt:
     pkg: kodi
-    state: installed
+    state: latest
     update_cache: true
   when: ppakodi
   register: kodiinstalled
